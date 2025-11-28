@@ -6,38 +6,52 @@
       "password": "password123",
       "name": "Demo User",
       "phone": "1234567890",
-      "addresses": []
+      "addresses": [],
+      "isAdmin": false
+    },
+    {
+      "id": "2",
+      "email": "admin@example.com",
+      "password": "password123",
+      "name": "Admin User",
+      "phone": "1234567890",
+      "addresses": [],
+      "isAdmin": true
     }
   ],
   "categories": [
     {
       "id": "1",
       "name": "Electronics",
-      "image": "https://images.unsplash.com/photo-1577375729078-820d5283031c?w=500&q=80",
+      "image": "https://i.ibb.co/hJdcGrPY/c1.jpg",
       "order": 1,
       "subCategories": [
         {
           "id": "1-1",
-          "name": "Smartphones"
+          "name": "Smartphones",
+          "image": "https://i.ibb.co/BKP9jc52/c1-1.webp"
         },
         {
           "id": "1-2",
-          "name": "Laptops"
+          "name": "Laptops",
+          "image": "https://i.ibb.co/kVLMxyn3/c1-2.webp"
         },
         {
           "id": "1-3",
-          "name": "Audio"
+          "name": "Audio",
+          "image": "https://i.ibb.co/4nx5JRkD/c1-3.webp"
         },
         {
           "id": "1-4",
-          "name": "Accessories"
+          "name": "Accessories",
+          "image": "https://i.ibb.co/0p0fmDgc/c1-4.webp"
         }
       ]
     },
     {
       "id": "2",
       "name": "Fashion",
-      "image": "https://images.unsplash.com/photo-1590159983013-d4ff5fc71c1d?w=500&q=80",
+      "image": "https://i.ibb.co/gZZTZDRx/c2.jpg",
       "order": 2,
       "subCategories": [
         {
@@ -61,7 +75,7 @@
     {
       "id": "3",
       "name": "Home",
-      "image": "https://images.unsplash.com/photo-1484101403633-562f891dc89a?w=500&q=80",
+      "image": "https://i.ibb.co/sJD71VMm/c3.jpg",
       "order": 3,
       "subCategories": [
         {
@@ -85,7 +99,7 @@
     {
       "id": "4",
       "name": "Books",
-      "image": "https://images.unsplash.com/photo-1471970471555-19d4b113e9ed?q=80&w=500",
+      "image": "https://i.ibb.co/67VZRG4K/c4.jpg",
       "order": 4,
       "subCategories": [
         {
@@ -109,7 +123,7 @@
     {
       "id": "5",
       "name": "Health & Beauty",
-      "image": "https://images.unsplash.com/photo-1531751519425-e1fa9110434b?q=80&w=500",
+      "image": "https://i.ibb.co/272T7Y2Z/c5.jpg",
       "order": 5,
       "subCategories": [
         {
@@ -129,30 +143,6 @@
           "name": "Fragrance"
         }
       ]
-    },
-    {
-      "id": "6",
-      "name": "Toys",
-      "image": "https://images.unsplash.com/photo-1641563817292-d2085b953e78?q=80&w=500",
-      "order": 6,
-      "subCategories": [
-        {
-          "id": "6-1",
-          "name": "Action Figures"
-        },
-        {
-          "id": "6-2",
-          "name": "Dolls"
-        },
-        {
-          "id": "6-3",
-          "name": "Puzzles"
-        },
-        {
-          "id": "6-4",
-          "name": "Board Games"
-        }
-      ]
     }
   ],
   "products": [
@@ -163,14 +153,17 @@
       "originalPrice": 69.98,
       "categoryId": "1",
       "subCategoryId": "1-3",
+      "category": "Electronics",
+      "subCategory": "Audio",
       "images": [
-        "/assets/images/p1-1-1.webp",
-        "/assets/images/p1-1-2.webp"
+        "https://i.ibb.co/DP0x9Wp8/p1-1-1.webp",
+        "https://i.ibb.co/wF0m3Cgz/p1-1-2.webp"
       ],
       "description": "The JBL Tune 520BT headphones stream powerful JBL Pure Bass sound for up to 57 hours, thanks to the latest 5.3 BT technology. Quickly rechargeable, they sit comfortably on your head even after hours of listening pleasure. With a flat-folding design, the JBL Tune 520BT easily fits in your backpack to follow you everywhere.",
       "inStock": true,
       "stockQuantity": 50,
-      "rating": 4.5,
+      "rating": 3.9,
+      "ratingCount": 45,
       "brand": "JBL",
       "isDeal": true,
       "isBestseller": true
@@ -182,13 +175,16 @@
       "originalPrice": 249.99,
       "categoryId": "1",
       "subCategoryId": "1-3",
+      "category": "Electronics",
+      "subCategory": "Audio",
       "images": [
-        "/assets/images/p1-2.webp"
+        "https://i.ibb.co/N6xYpQmw/p1-2.webp"
       ],
       "description": "Sony’s lightest Wireless Noise-cancelling headband ever. Take noise cancelling to the next level with Sony’s Integrated Processor V1, so you can fully immerse yourself in the music. Super comfortable and lightweight design. Adjustable Ambient Sound mode and Adaptive Sound control features tailors sound to suit the environment around you. Up to 35-hour battery life with quick charging (3 min charge for up to 1 hour of playback).",
       "inStock": true,
       "stockQuantity": 50,
-      "rating": 4.5,
+      "rating": 4.0,
+      "ratingCount": 60,
       "brand": "Sony",
       "isDeal": true,
       "isBestseller": true
@@ -196,17 +192,20 @@
     {
       "id": "3",
       "name": "New Bose QuietComfort Ultra Bluetooth Headphones (2nd Gen), Wireless Headphones with Spatial Audio, Over Ear Noise Cancelling with Mic, Up to 30 Hours of Play time, Midnight Violet - Limited Edition",
-      "price": 123.00,
-      "originalPrice": 249.99,
+      "price": 499.00,
+      "originalPrice": 599.00,
       "categoryId": "1",
       "subCategoryId": "1-3",
+      "category": "Electronics",
+      "subCategory": "Audio",
       "images": [
-        "/assets/images/p1-3.webp"
+        "https://i.ibb.co/zTj82LHQ/p1-3.webp"
       ],
       "description": "Awaken your sound with QuietComfort Ultra Headphones (2nd Gen). Obsessively engineered with Bose’s best noise cancellation for headphones, plus spatialized audio to expand sound, every beat hits harder and every melody takes up more space. Bose Immersive Audio takes what you’re hearing out of your head and places it in front of you for a more natural listening experience.",
       "inStock": true,
       "stockQuantity": 50,
-      "rating": 4.5,
+      "rating": 4.1,
+      "ratingCount": 70,
       "brand": "Bose",
       "isDeal": true,
       "isBestseller": true
@@ -214,71 +213,363 @@
     {
       "id": "4",
       "name": "soundcore by Anker Q20i Hybrid Active Noise Cancelling Headphones, Wireless Over-Ear Bluetooth, 40H Long ANC Playtime, Hi-Res Audio, Big Bass, Customize via an App, Transparency Mode, Ideal for Travel",
-      "price": 123.00,
-      "originalPrice": 249.99,
+      "price": 45.10,
+      "originalPrice": 99.99,
       "categoryId": "1",
       "subCategoryId": "1-3",
+      "category": "Electronics",
+      "subCategory": "Audio",
       "images": [
-        "/assets/images/p1-4.webp"
+        "https://i.ibb.co/1tWfq3N8/p1-4.webp"
       ],
       "description": "Hybrid Active Noise Cancelling: 2 internal and 2 external mics work in tandem to detect external noise and effectively reduce up to 90% of it, such as planes and car engines. Immerse Yourself in Detailed Audio: The noise cancelling headphones have oversized 40mm dynamic drivers that produce detailed sound and thumping beats with BassUp technology. Compatible with Hi-Res certified audio via the AUX cable for more detail.",
       "inStock": true,
       "stockQuantity": 50,
-      "rating": 4.5,
-      "brand": "SoundMax",
+      "rating": 4.2,
+      "ratingCount": 80,
+      "brand": "Anker",
       "isDeal": true,
       "isBestseller": true
     },
     {
       "id": "5",
       "name": "Sony WH-1000XM6 The Best Wireless Noise Canceling Headphones, HD NC Processor QN3, 12 Microphones, Adaptive NC Optimizer, Mastered by Engineers, Studio-Quality, 30-Hour Battery",
-      "price": 123.00,
-      "originalPrice": 249.99,
+      "price": 498.00,
+      "originalPrice": 599.99,
       "categoryId": "1",
       "subCategoryId": "1-3",
+      "category": "Electronics",
+      "subCategory": "Audio",
       "images": [
-        "/assets/images/p1-5.webp"
+        "https://i.ibb.co/s9TzHdzQ/p1-5.webp"
       ],
       "description": "Developed in collaboration with world-renowned mastering audio engineers, these headphones deliver unparalleled sound clarity and precision. A specially designed driver with a lightweight carbon fiber dome delivers high fidelity sound, where rich vocals and every instrument remains pure and balanced. Optimized for advanced noise cancellation, the WH-1000XM6 headphones keep every frequency crisp and true to the artist’s intent.",
       "inStock": true,
       "stockQuantity": 50,
-      "rating": 4.5,
+      "rating": 4.3,
+      "ratingCount": 100,
       "brand": "Sony",
       "isDeal": true,
       "isBestseller": true
     },
     {
-      "id": "2",
-      "name": "Smart Watch",
-      "price": 199.99,
-      "originalPrice": 249.99,
+      "id": "6",
+      "name": "Apple iPhone 17",
+      "price": 829.99,
+      "originalPrice": 949.99,
       "categoryId": "1",
-      "subCategoryId": "1-3",
+      "subCategoryId": "1-1",
+      "category": "Electronics",
+      "subCategory": "Smartphones",
       "images": [
-        "https://images.unsplash.com/photo-1669049358893-9a727252b5f1?q=80&w=500"
+        "https://i.ibb.co/DPR4Xcq9/p2-1-1.webp",
+        "https://i.ibb.co/W4TNq6D9/p2-1-2.webp"
       ],
+      "description": "iPhone 17. More delightful. More durable. 6.3-inch ProMotion display,1 Ceramic Shield 2, all 48MP rear cameras, Center Stage front camera, A19 chip, and more",
       "inStock": true,
       "stockQuantity": 30,
       "rating": 4.8,
-      "brand": "TechTime",
+      "ratingCount": 120,
+      "brand": "Apple",
       "isDeal": false,
       "isBestseller": true
     },
     {
-      "id": "3",
-      "name": "Running Shoes",
-      "price": 79.99,
-      "originalPrice": 99.99,
+      "id": "7",
+      "name": "Apple iPhone 17 Pro Max",
+      "price": 1199.99,
+      "originalPrice": 1399.99,
+      "categoryId": "1",
+      "subCategoryId": "1-1",
+      "category": "Electronics",
+      "subCategory": "Smartphones",
+      "images": [
+        "https://i.ibb.co/vSJzSLZ/p2-2-1.webp",
+        "https://i.ibb.co/BY26f6T/p2-2-2.webp"
+      ],
+      "description": "iPhone 17 Pro Max. The most powerful iPhone ever. Brilliant 6.9-inch display,1 aluminum unibody design, A19 Pro chip, all 48MP rear cameras, and best-ever battery life.",
+      "inStock": true,
+      "stockQuantity": 45,
+      "rating": 4.7,
+      "ratingCount": 95,
+      "brand": "Apple",
+      "isDeal": true,
+      "isBestseller": true
+    },
+    {
+      "id": "8",
+      "name": "Samsung Galaxy S25 Ultra",
+      "price": 1299.00,
+      "originalPrice": 1499.00,
+      "categoryId": "1",
+      "subCategoryId": "1-1",
+      "category": "Electronics",
+      "subCategory": "Smartphones",
+      "images": [
+        "https://i.ibb.co/DZNqH22/p2-3-1.webp",
+        "https://i.ibb.co/sXPytJZ/p2-3-2.webp"
+      ],
+      "description": "Elevate your life with the new Samsung Galaxy S25 Ultra. Experience the next evolution of Galaxy AI,+ featuring Now Brief for personalized insights and tips to keep you ahead of your day.1 Boost your efficiency by handling multiple tasks with a single command using Cross App Action.2 Enjoy peak gaming performance with the next-generation processor and see images come to life with vibrant colors and sharpness on the larger, stunning display.",
+      "inStock": true,
+      "stockQuantity": 25,
+      "rating": 4.6,
+      "ratingCount": 80,
+      "brand": "Samsung",
+      "isDeal": false,
+      "isBestseller": true
+    },
+    {
+      "id": "9",
+      "name": "Samsung Galaxy Z Flip7",
+      "price": 1099.99,
+      "originalPrice": 1299.99,
+      "categoryId": "1",
+      "subCategoryId": "1-1",
+      "category": "Electronics",
+      "subCategory": "Smartphones",
+      "images": [
+        "https://i.ibb.co/qLj3LC3r/p2-4-1.webp",
+        "https://i.ibb.co/wZfgyMxP/p2-4-2.webp"
+      ],
+      "description": "Get ready to experience the all-new Samsung Galaxy Z Flip7 — the flip phone reinvented just for you. Its sleek, pocket-friendly design combines classic convenience with cutting-edge features you’ll love. Stay effortlessly connected with the vibrant 4.1-inch edge-to-edge cover screen that keeps your notifications and updates front and center, flip it open for an expanded 6.9-inch screen",
+      "inStock": true,
+      "stockQuantity": 40,
+      "rating": 4.5,
+      "ratingCount": 65,
+      "brand": "Samsung",
+      "isDeal": false,
+      "isBestseller": false
+    },
+    {
+      "id": "10",
+      "name": "Google Pixel 10 Pro XL",
+      "price": 1249.99,
+      "originalPrice": 1449.99,
+      "categoryId": "1",
+      "subCategoryId": "1-1",
+      "category": "Electronics",
+      "subCategory": "Smartphones",
+      "images": [
+        "https://i.ibb.co/Q3kmwcfq/p2-5-1.webp",
+        "https://i.ibb.co/prR2zsTk/p2-5-2.webp"
+      ],
+      "description": "Meet Pixel 10 Pro XL, the new standard for pro phones. Advanced AI with Gemini, unbelievable camera quality, impeccable design, and the next-gen Google Tensor G5 chip.1",
+      "inStock": true,
+      "stockQuantity": 20,
+      "rating": 4.7,
+      "ratingCount": 40,
+      "brand": "Google",
+      "isDeal": false,
+      "isBestseller": false
+    },
+    {
+      "id": "11",
+      "name": "SAXX Underwear Co. Men's Ultra Super Soft Boxer Brief Fly, 3 Pack",
+      "price": 46.87,
+      "originalPrice": 66.95,
       "categoryId": "2",
       "subCategoryId": "2-1",
+      "category": "Fashions",
+      "subCategory": "Men",
       "images": [
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80"
+        "https://i.ibb.co/Z69rM1qF/p3-1.jpg"
       ],
+      "description": "ULTRA SUPER SOFT BOXER BRIEFS FLY 3 PACK: Men’s underwear designed for complete comfort and total freedom of movement, these are boxers for men who want to unwind all day, every day.RELAXED FIT: Made from super soft moisture wicking fabric featuring a fly and anti-roll waistband, these men’s boxer briefs underwear have a 5” seam and sit comfortably mid-thigh.",
       "inStock": true,
-      "stockQuantity": 100,
-      "rating": 4.2,
-      "brand": "RunFast",
+      "stockQuantity": 30,
+      "rating": 4.8,
+      "ratingCount": 120,
+      "brand": "SAXX Underwear Co.",
+      "isDeal": false,
+      "isBestseller": true
+    },
+    {
+      "id": "12",
+      "name": "Mizuno Mens AustinSock",
+      "price": 13.59,
+      "originalPrice": 15.99,
+      "categoryId": "2",
+      "subCategoryId": "2-1",
+      "category": "Fashions",
+      "subCategory": "Men",
+      "images": [
+        "https://i.ibb.co/9f0ZPS0/p3-2.jpg"
+      ],
+      "description": "Mizuno's Performance OTC Sock is the next generation of athletic socks, providing unrivaled detail and comfort in a wide-range of team colors. Contoured and featuring a Gripper top and Y-Heel to keep sock in place, while providing a superior fit. A padded foot bed adds another layer of comfort and arch support to make the Performance OTC Sock the perfect option for athletes.",
+      "inStock": true,
+      "stockQuantity": 45,
+      "rating": 4.7,
+      "ratingCount": 95,
+      "brand": "Mizuno",
       "isDeal": true,
+      "isBestseller": true
+    },
+    {
+      "id": "13",
+      "name": "Amazon Essentials Men's Standard Slim-fit Cotton Pique Tipped Polo",
+      "price": 15.77,
+      "originalPrice": 18.50,
+      "categoryId": "2",
+      "subCategoryId": "2-1",
+      "category": "Fashions",
+      "subCategory": "Men",
+      "images": [
+        "https://i.ibb.co/GD2nLcb/p3-3.jpg"
+      ],
+      "description": "Amazon Essentials is focused on creating affordable, high-quality, and long-lasting everyday clothing you can rely on. Our line of men's must-haves includes polo shirts, chino pants, classic-fit shorts, casual button-downs, and crew-neck tees. Our consistent sizing takes the guesswork out of shopping, and each piece is put to the test to maintain the highest standards in quality and comfort.",
+      "inStock": true,
+      "stockQuantity": 25,
+      "rating": 4.6,
+      "ratingCount": 80,
+      "brand": "Amazon Essentials",
+      "isDeal": false,
+      "isBestseller": true
+    },
+    {
+      "id": "14",
+      "name": "Tommy Hilfiger mens Tanner Polo Cf",
+      "price": 57.87,
+      "originalPrice": 77.16,
+      "categoryId": "2",
+      "subCategoryId": "2-1",
+      "category": "Fashions",
+      "subCategory": "Men",
+      "images": [
+        "https://i.ibb.co/KzSjFrmC/p3-4.jpg"
+      ],
+      "description": "A classic in every sense of the word. This Tommy Hilfiger polo shirt is a casual wardrobe must-have. Polo shirt for men available in a custom fit. Polo shirt collar with a two-button placket. Embroidered flag at chest on this polo shirt for men. This polo shirt from Tommy Hilfiger is perfect for any casual occasions.",
+      "inStock": true,
+      "stockQuantity": 40,
+      "rating": 4.5,
+      "ratingCount": 65,
+      "brand": "Tommy",
+      "isDeal": false,
+      "isBestseller": false
+    },
+    {
+      "id": "15",
+      "name": "GAP Mens Essential Slim Fit Khaki Chino Pants",
+      "price": 65.55,
+      "originalPrice": 85.65,
+      "categoryId": "2",
+      "subCategoryId": "2-1",
+      "category": "Fashions",
+      "subCategory": "Men",
+      "images": [
+        "https://i.ibb.co/k2V2T02h/p3-5.jpg"
+      ],
+      "description": "THE ESSENTIAL SLIM FIT KHAKIS: With a slim cut that’s lean but never tight our khaki pants are made from a smooth cotton twill fabric with GapFlex stretch to keep you comfortable all day long",
+      "inStock": true,
+      "stockQuantity": 20,
+      "rating": 4.7,
+      "ratingCount": 40,
+      "brand": "GAP",
+      "isDeal": false,
+      "isBestseller": false
+    },
+    {
+      "id": "16",
+      "name": "BTFBM Sweaters for Women Fall Cable Knit Sweater Oversized Crew Neck Long Sleeve Chunky Casual Pullover Tops Winter 2025",
+      "price": 37.99,
+      "originalPrice": 57.99,
+      "categoryId": "2",
+      "subCategoryId": "2-2",
+      "category": "Fashions",
+      "subCategory": "Women",
+      "images": [
+        "https://i.ibb.co/ZRrZGkC0/p2-4.webp"
+      ],
+      "description": "FEATURES: Crew Neck / Balloon Sleeve / Oversized Sweaters For Women / Solid Color / Warm Comfy Stretchy Cable Knit Sweaters For Women / Loose Fit Women's Sweaters / Wide Long Sleeve Women Sweater / Chunky Sweaters For Women / Fall Outfits For Women 2025 / Womens Clothes Trendy Fall 2025",
+      "inStock": true,
+      "stockQuantity": 30,
+      "rating": 4.8,
+      "ratingCount": 120,
+      "brand": "BTFBM",
+      "isDeal": false,
+      "isBestseller": true
+    },
+    {
+      "id": "17",
+      "name": "Jhsnjnr Womens Oversized Cozy Chunky Sweaters Fall Long Sleeve Knitted Pullover Tops Crew Neck Cute Fuzzy Sweater",
+      "price": 44.99,
+      "originalPrice": 64.99,
+      "categoryId": "2",
+      "subCategoryId": "2-2",
+      "category": "Fashions",
+      "subCategory": "Women",
+      "images": [
+        "https://i.ibb.co/TD7LvtRF/p4-1.webp"
+      ],
+      "description": "Material:Womens sweaters made of 52% acrylic,28% cotton and 20% PBT.Chunky knit fabric is soft and skin-friendly without being too heavy,take into account the warmth effect and the comfort of wearing. Feature:Crew neck,long sleeve,ribbed hem,rolled cuffs,oversized,solid color,cute,slouchy,pullover",
+      "inStock": true,
+      "stockQuantity": 45,
+      "rating": 4.7,
+      "ratingCount": 95,
+      "brand": "Jhsnjnr",
+      "isDeal": true,
+      "isBestseller": true
+    },
+    {
+      "id": "18",
+      "name": "Carhartt Womens Relaxed Fit Midweight Logo Sleeve Graphic Printed SweatshirtSweatshirt",
+      "price": 69.99,
+      "originalPrice": 83.53,
+      "categoryId": "2",
+      "subCategoryId": "2-2",
+      "category": "Fashions",
+      "subCategory": "Women",
+      "images": [
+        "https://i.ibb.co/XQ5TtwB/p4-3.webp"
+      ],
+      "description": "Versatile midweight warmth and casual comfort. This women's cotton-blend sweatshirt is a go-to layer on workdays and weekends alike. A relaxed fit offers a little extra room to move",
+      "inStock": true,
+      "stockQuantity": 25,
+      "rating": 4.6,
+      "ratingCount": 80,
+      "brand": "Samsung",
+      "isDeal": false,
+      "isBestseller": true
+    },
+    {
+      "id": "19",
+      "name": "Ekouaer Flannel Faux Poncho for Women Lightweigh Blanket Warm TV Shawl Winter Coat Sweater Cape",
+      "price": 32.19,
+      "originalPrice": 45.99,
+      "categoryId": "2",
+      "subCategoryId": "2-2",
+      "category": "Fashions",
+      "subCategory": "Women",
+      "images": [
+        "https://i.ibb.co/3YM833yB/p4-4.webp"
+      ],
+      "description": "Flannel ponchos look great over anything, in the cold weather as a blanket to keep you warm and elegant ,wear it with tops and jeans to the most formal dress, creating a beautiful silhouette. This winter warm capes can be presented as a gift to your wife ,girlfriend or female friends.",
+      "inStock": true,
+      "stockQuantity": 40,
+      "rating": 4.5,
+      "ratingCount": 65,
+      "brand": "Ekouaer",
+      "isDeal": false,
+      "isBestseller": false
+    },
+    {
+      "id": "20",
+      "name": "Amazon Essentials Womens Crop Hoodie Sweatshirt",
+      "price": 32.10,
+      "originalPrice": 55.59,
+      "categoryId": "2",
+      "subCategoryId": "2-2",
+      "category": "Fashions",
+      "subCategory": "Women",
+      "images": [
+        "https://i.ibb.co/TB9Pq66w/p4-5.webp"
+      ],
+      "description": "ESSENTIAL HOODIE: A new shape to add to your wardrobe, this adorable hoodie is a must have. Style back to our AmazonEssentials Legging or Amazon Essentials Women's Relaxed Jogger for a fresh, head-to-toe look.",
+      "inStock": true,
+      "stockQuantity": 20,
+      "rating": 4.7,
+      "ratingCount": 40,
+      "brand": "Amazon Essentials",
+      "isDeal": false,
       "isBestseller": false
     }
   ],
@@ -298,12 +589,12 @@
         {
           "productId": "1",
           "quantity": 5,
-          "price": 99.99,
-          "productName": "Wireless Headphones",
-          "productImage": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80"
+          "price": 39.98,
+          "productName": "JBL Tune 520BT",
+          "productImage": "https://i.ibb.co/DP0x9Wp8/p1-1-1.webp"
         }
       ],
-      "totalAmount": 499.95,
+      "totalAmount": 199.90,
       "shippingAddress": {
         "street": "123 Main St",
         "city": "Seattle",
@@ -324,42 +615,18 @@
       "orderNumber": "AMZ-20251122-4873"
     },
     {
-      "id": "ee93",
-      "userId": "1",
-      "items": [],
-      "totalAmount": 0,
-      "shippingAddress": {
-        "street": "123 Main St",
-        "city": "Seattle",
-        "state": "WA",
-        "zipCode": "98109",
-        "country": "USA",
-        "id": "1763841032616"
-      },
-      "status": "pending",
-      "statusHistory": [
-        {
-          "status": "pending",
-          "date": "2025-11-22T19:50:32.616Z"
-        }
-      ],
-      "paymentStatus": "paid",
-      "createdAt": "2025-11-22T19:50:32.616Z",
-      "orderNumber": "AMZ-20251122-5922"
-    },
-    {
       "id": "cc69",
       "userId": "1",
       "items": [
         {
-          "productId": "1",
+          "productId": "2",
           "quantity": 2,
-          "price": 99.99,
-          "productName": "Wireless Headphones",
-          "productImage": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80"
+          "price": 123,
+          "productName": "Sony WH-CH720N Noise Cancelling Wireless Headphones",
+          "productImage": "https://i.ibb.co/DP0x9Wp8/p1-1-1.webp"
         }
       ],
-      "totalAmount": 199.98,
+      "totalAmount": 246,
       "shippingAddress": {
         "street": "123 Main St",
         "city": "Seattle",
@@ -382,8 +649,16 @@
     {
       "id": "47a6",
       "userId": "1",
-      "items": [],
-      "totalAmount": 0,
+      "items": [
+        {
+          "productId": "3",
+          "quantity": 1,
+          "price": 499,
+          "productName": "New Bose QuietComfort Ultra Bluetooth Headphones",
+          "productImage": "https://i.ibb.co/DP0x9Wp8/p1-1-1.webp"
+        }
+      ],
+      "totalAmount": 499,
       "shippingAddress": {
         "street": "123 Main St",
         "city": "Seattle",
@@ -402,92 +677,44 @@
       "paymentStatus": "paid",
       "createdAt": "2025-11-22T19:52:52.158Z",
       "orderNumber": "AMZ-20251122-791"
-    },
-    {
-      "id": "cb5d",
-      "userId": "1",
-      "items": [],
-      "totalAmount": 0,
-      "shippingAddress": {
-        "street": "123 Main St",
-        "city": "Seattle",
-        "state": "WA",
-        "zipCode": "98109",
-        "country": "USA",
-        "id": "1763841178440"
-      },
-      "status": "pending",
-      "statusHistory": [
-        {
-          "status": "pending",
-          "date": "2025-11-22T19:52:58.440Z"
-        }
-      ],
-      "paymentStatus": "paid",
-      "createdAt": "2025-11-22T19:52:58.440Z",
-      "orderNumber": "AMZ-20251122-9716"
-    },
-    {
-      "id": "7e6b",
-      "userId": "1",
-      "items": [
-        {
-          "productId": "3",
-          "quantity": 4,
-          "price": 79.99,
-          "productName": "Running Shoes",
-          "productImage": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500&q=80"
-        }
-      ],
-      "totalAmount": 319.96,
-      "shippingAddress": {
-        "street": "123 Main St",
-        "city": "Seattle",
-        "state": "WA",
-        "zipCode": "98109",
-        "country": "USA",
-        "id": "1763841213575"
-      },
-      "status": "pending",
-      "statusHistory": [
-        {
-          "status": "pending",
-          "date": "2025-11-22T19:53:33.575Z"
-        }
-      ],
-      "paymentStatus": "paid",
-      "createdAt": "2025-11-22T19:53:33.575Z",
-      "orderNumber": "AMZ-20251122-5865"
-    },
-    {
-      "id": "2281",
-      "userId": "1",
-      "items": [],
-      "totalAmount": 0,
-      "shippingAddress": {
-        "street": "123 Main St",
-        "city": "Seattle",
-        "state": "WA",
-        "zipCode": "98109",
-        "country": "USA",
-        "id": "1763841315529"
-      },
-      "status": "pending",
-      "statusHistory": [
-        {
-          "status": "pending",
-          "date": "2025-11-22T19:55:15.529Z"
-        }
-      ],
-      "paymentStatus": "paid",
-      "createdAt": "2025-11-22T19:55:15.529Z",
-      "orderNumber": "AMZ-20251122-4735"
     }
   ],
   "reviews": [
     {
       "id": "1",
       "productId": "1",
+      "userId": "101",
+      "userName": "John Doe",
+      "rating": 5,
+      "comment": "Great sound quality!"
+    },
+    {
+      "id": "2",
+      "productId": "2",
+      "userId": "101",
+      "userName": "John Doe",
+      "rating": 5,
+      "comment": "Great sound quality!"
+    },
+    {
+      "id": "3",
+      "productId": "3",
+      "userId": "101",
+      "userName": "John Doe",
+      "rating": 5,
+      "comment": "Great sound quality!"
+    },
+    {
+      "id": "4",
+      "productId": "4",
+      "userId": "101",
+      "userName": "John Doe",
+      "rating": 5,
+      "comment": "Great sound quality!"
+    },
+    {
+      "id": "5",
+      "productId": "5",
       "userId": "101",
       "userName": "John Doe",
       "rating": 5,
@@ -499,34 +726,44 @@
       "id": "0cec",
       "userId": "1",
       "products": [
-        "1"
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
       ]
     }
   ],
   "banners": [
     {
       "id": "1",
-      "image": "https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800",
-      "title": "Summer Sale",
+      "image": "https://i.ibb.co/Gv1WbqHy/b1.jpg",
+      "title": "Electronics",
       "link": "/category/1"
     },
     {
       "id": "2",
-      "image": "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800&q=80",
-      "title": "New Arrivals",
+      "image": "https://i.ibb.co/gLvf9cFC/b2.jpg",
+      "title": "Summer Sale",
       "link": "/category/2"
     },
     {
       "id": "3",
-      "image": "https://images.unsplash.com/photo-1546213290-e1b492ab3eee?w=800&q=80",
+      "image": "https://i.ibb.co/HLFjt0pL/b3.jpg",
+      "title": "New Arrivals",
+      "link": "/category/2"
+    },
+    {
+      "id": "4",
+      "image": "https://i.ibb.co/WpN3bmZy/b4.jpg",
       "title": "Best Sellers",
       "link": "/category/3"
     },
     {
-      "id": "4",
-      "image": "https://images.unsplash.com/photo-1607083205626-956228d6185d?w=800&q=80",
+      "id": "5",
+      "image": "https://i.ibb.co/JjVmSvdJ/b5.jpg",
       "title": "Best Deals",
-      "link": "/category/4"
+      "link": "/category/5"
     }
   ]
 }

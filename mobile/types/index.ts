@@ -22,11 +22,15 @@ export interface Product {
     name: string;
     price: number;
     originalPrice?: number;
-    categoryId: number;
+    categoryId: string;
+    subCategoryId?: string;
+    category?: Category;
+    subCategory?: { id: string; name: string };
     images: string[];
     inStock: boolean;
     stockQuantity: number;
     rating: number;
+    ratingCount: number;
     brand: string;
     isDeal: boolean;
     isBestseller: boolean;
@@ -38,6 +42,7 @@ export interface Category {
     name: string;
     image: string;
     order: number;
+    subCategories?: { id: string; name: string }[];
 }
 
 export interface Banner {
@@ -102,4 +107,15 @@ export interface Banner {
     image: string;
     title: string;
     link: string;
+}
+
+export interface ProductFilter {
+    query?: string;
+    categoryId?: string;
+    brand?: string;
+    minRating?: number;
+    minPrice?: number;
+    maxPrice?: number;
+    sortOrder?: 'price_asc' | 'price_desc' | 'rating_desc' | 'newest';
+    isDeal?: boolean;
 }

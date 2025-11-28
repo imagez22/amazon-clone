@@ -11,12 +11,12 @@ import { Icon } from "@/components/ui/icon";
 import { Spinner } from "@/components/ui/spinner";
 import { Divider } from "@/components/ui/divider";
 import { useLocalSearchParams, router } from 'expo-router';
-import { Header } from '../../components';
-import { productAPI } from '../../services/api';
-import { Product } from '../../types';
-import { useCart } from '../../context/CartContext';
+import { Header } from '../../../components';
+import { productAPI } from '../../../services/api';
+import { Product } from '../../../types';
+import { useCart } from '../../../context/CartContext';
 import { Star, Heart, Share2 } from 'lucide-react-native';
-import { useWishlist } from '../../context/WishlistContext';
+import { useWishlist } from '../../../context/WishlistContext';
 
 const { width } = Dimensions.get('window');
 
@@ -100,7 +100,7 @@ export default function ProductDetailScreen() {
                                 />
                             ))}
                         </HStack>
-                        <Text className="text-gray-500 text-sm">(120 reviews)</Text>
+                        <Text className="text-gray-500 text-sm">({product.ratingCount} reviews)</Text>
                     </HStack>
 
                     <Divider />

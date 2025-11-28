@@ -38,25 +38,29 @@ export const ProductCard = ({ product }: ProductCardProps) => {
 
     return (
         <Pressable onPress={handlePress} className="flex-1 m-1">
-            <Box className="bg-white   rounded-lg border">
+            <Box className="bg-white rounded-lg border">
                 <Box className="relative">
-                    <Image
-                        source={{ uri: product.images[0] }}
-                        alt={product.name}
-                        className=" w-full rounded-t-lg"
-                        resizeMode="contain"
-                    />
+                    <Box className="w-full aspect-square overflow-hidden rounded-t-lg">
+                        <Image
+                            source={{ uri: product.images[0] }}
+                            alt={product.name}
+                            className="w-full h-full"
+                            resizeMode="cover"
+                        />
+                    </Box>
                     <Pressable
-                        className="absolute top-4 right-4 p-1 bg-white rounded-full opacity-80"
+                        className="absolute top-2 right-2 p-1 bg-white rounded-full opacity-80"
                         onPress={handleToggleWishlist}
                     >
                         <Icon as={Heart} className={`${isWishlisted ? 'text-red-500 fill-red-500' : 'text-gray-400'}`} />
                     </Pressable>
                 </Box>
 
-                <VStack className="gap-1  ">
+                <VStack className="p-2 gap-1  ">
                     <Text className="text-xs font-medium">{product.brand}</Text>
-                    <Text numberOfLines={2} className="text-sm font-normal  min-h-[40px]">{product.name}</Text>
+                    <Text
+                        numberOfLines={3}
+                        ellipsizeMode="tail" className="text-sm font-normal  min-h-[60px] line-clamp-3">{product.name}</Text>
 
                     <HStack className="items-center gap-1">
                         <Icon as={Star} className="w-3 h-3 text-yellow-400 fill-yellow-400" />
@@ -64,7 +68,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                     </HStack>
 
                     <HStack className="items-center gap-1">
-                        <Text className="font-bold text-md">${product.price}</Text>
+                        <Text className="font-bold text-lg">${product.price}</Text>
                         {product.originalPrice && (
                             <Text className="text-xs line-through text-gray-400">
                                 ${product.originalPrice}
@@ -77,10 +81,6 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                             <Text className="text-white text-2xs font-bold">Deal</Text>
                         </Box>
                     )}
-
-                    {/* <Button size="sm" onPress={handleAddToCart} className="mt-2 bg-yellow-400">
-                        <ButtonText className="text-black">Add to Cart</ButtonText>
-                    </Button> */}
                 </VStack>
             </Box>
         </Pressable>

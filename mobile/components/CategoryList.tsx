@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, Pressable } from 'react-native';
+import { ScrollView, Pressable, View } from 'react-native';
 import { Box } from "@/components/ui/box";
 import { Text } from "@/components/ui/text";
 import { Image } from "@/components/ui/image";
@@ -14,6 +14,7 @@ interface CategoryListProps {
 export const CategoryList = ({ categories }: CategoryListProps) => {
     return (
         <ScrollView horizontal showsHorizontalScrollIndicator={false} contentContainerStyle={{ paddingHorizontal: 16 }}>
+
             {categories.map((category) => (
                 <Pressable key={category.id} onPress={() => router.push({ pathname: '/search', params: { categoryId: category.id } })}>
                     <VStack className="items-center mr-4 gap-1">

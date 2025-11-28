@@ -82,7 +82,7 @@ export default function Register() {
                     </FormControl>
 
                     <Button onPress={handleRegister} className="bg-yellow-400" size="lg">
-                        <ButtonText className="text-black">Verify mobile number</ButtonText>
+                        <ButtonText className="text-black">Register</ButtonText>
                     </Button>
                 </VStack>
 
