@@ -8,7 +8,7 @@ import { Heading } from '@/components/ui/heading';
 import { FormControl, FormControlLabel, FormControlLabelText } from '@/components/ui/form-control';
 import { HStack } from '@/components/ui/hstack';
 import { Divider } from '@/components/ui/divider';
-import { Link, router } from 'expo-router';
+import { Link, router, useLocalSearchParams } from 'expo-router';
 import { useAuth } from '../../context/AuthContext';
 
 export default function Login() {
@@ -16,12 +16,18 @@ export default function Login() {
     const [password, setPassword] = useState('password123');
     const [error, setError] = useState('');
     const { login } = useAuth();
+    const { redirect } = useLocalSearchParams();
 
     const handleLogin = async () => {
         try {
             setError('');
             await login(email, password);
-            router.replace('/(tabs)');
+            // Redirect to checkout if coming from cart page, otherwise go to home
+            if (redirect === 'checkout') {
+                router.replace('/checkout');
+            } else {
+                router.replace('/(tabs)');
+            }
         } catch (err: any) {
             setError(err.message || 'Login failed');
         }

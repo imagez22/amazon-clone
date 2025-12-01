@@ -17,29 +17,16 @@ export default function CartScreen() {
     const { items, totalAmount, itemCount } = useCart();
     const { isAuthenticated } = useAuth();
 
-    if (!isAuthenticated) {
-        return (
-            <Box className="flex-1 bg-white">
-                <Header />
-                <EmptyState
-                    icon={ShoppingCart}
-                    title="Your Cart is Empty"
-                    message="Sign in to see your cart items"
-                    actionLabel="Sign In"
-                    onAction={() => router.push('/(auth)/login')}
-                />
-            </Box>
-        );
-    }
-
     if (items.length === 0) {
         return (
             <Box className="flex-1 bg-white">
                 <Header />
                 <EmptyState
                     icon={ShoppingCart}
-                    title="Your Amazon Cart is empty"
-                    message="Shop today's deals"
+                    title={isAuthenticated ? "Your Amazon Cart is empty" : "Your Cart is Empty"}
+                    message={isAuthenticated ? "Shop today's deals" : "Sign in to sync your cart"}
+                    actionLabel={!isAuthenticated ? "Sign In" : undefined}
+                    onAction={!isAuthenticated ? () => router.push('/(auth)/login?redirect=checkout') : undefined}
                 />
             </Box>
         );
@@ -55,13 +42,23 @@ export default function CartScreen() {
                             <Text className="text-lg">Subtotal ({itemCount} items):</Text>
                             <Text className="text-xl font-bold">${totalAmount.toFixed(2)}</Text>
                         </HStack>
-                        <Button
-                            className="bg-yellow-400"
-                            onPress={() => router.push('/checkout')}
-                            size="lg"
-                        >
-                            <ButtonText className="text-black">Proceed to Checkout</ButtonText>
-                        </Button>
+                        {isAuthenticated ? (
+                            <Button
+                                className="bg-yellow-400"
+                                onPress={() => router.push('/checkout')}
+                                size="lg"
+                            >
+                                <ButtonText className="text-black">Proceed to Checkout</ButtonText>
+                            </Button>
+                        ) : (
+                            <Button
+                                className="bg-yellow-400"
+                                onPress={() => router.push('/(auth)/login?redirect=checkout')}
+                                size="lg"
+                            >
+                                <ButtonText className="text-black">Sign In to Checkout</ButtonText>
+                            </Button>
+                        )}
                     </Box>
 
                     <VStack className="gap-1">

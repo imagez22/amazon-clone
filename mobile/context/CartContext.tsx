@@ -1,7 +1,10 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { CartItem, Product } from '../types';
 import { cartAPI } from '../services/api';
 import { useAuth } from './AuthContext';
+
+const CART_STORAGE_KEY = '@cart_items';
 
 interface CartContextType {
     items: CartItem[];
@@ -26,10 +29,59 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         if (user) {
             fetchCart();
         } else {
-            setItems([]);
+            loadLocalCart();
             setCartId(null);
         }
     }, [user]);
+
+    // Load cart from AsyncStorage for unauthenticated users
+    const loadLocalCart = async () => {
+        try {
+            const storedCart = await AsyncStorage.getItem(CART_STORAGE_KEY);
+            if (storedCart) {
+                const parsedCart = JSON.parse(storedCart);
+                setItems(parsedCart);
+            } else {
+                setItems([]);
+            }
+        } catch (error) {
+            console.error('Error loading local cart:', error);
+            setItems([]);
+        }
+    };
+
+    // Save cart to AsyncStorage for unauthenticated users
+    const saveLocalCart = async (cartItems: CartItem[]) => {
+        try {
+            await AsyncStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cartItems));
+        } catch (error) {
+            console.error('Error saving local cart:', error);
+        }
+    };
+
+    // Sync local cart to backend after login
+    const syncLocalCartToBackend = async (backendCartId: string) => {
+        try {
+            const storedCart = await AsyncStorage.getItem(CART_STORAGE_KEY);
+            if (storedCart) {
+                const localItems: CartItem[] = JSON.parse(storedCart);
+                if (localItems.length > 0) {
+                    // Sync local items to backend
+                    const totalAmount = localItems.reduce((sum, item) => {
+                        return sum + (item.product?.price || 0) * item.quantity;
+                    }, 0);
+
+                    await cartAPI.updateCart(backendCartId, { items: localItems, totalAmount });
+                    setItems(localItems);
+
+                    // Clear local storage after successful sync
+                    await AsyncStorage.removeItem(CART_STORAGE_KEY);
+                }
+            }
+        } catch (error) {
+            console.error('Error syncing local cart to backend:', error);
+        }
+    };
 
     const fetchCart = async () => {
         if (!user) return;
@@ -39,14 +91,22 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
             const carts = response.data;
             if (carts.length > 0) {
                 const cart = carts[0];
-                setItems(cart.items);
-                setCartId(cart.id);
+                // If backend cart is empty, sync local cart
+                if (cart.items.length === 0) {
+                    setCartId(cart.id);
+                    await syncLocalCartToBackend(cart.id);
+                } else {
+                    // Backend cart has items, use it and discard local cart
+                    setItems(cart.items);
+                    setCartId(cart.id);
+                    await AsyncStorage.removeItem(CART_STORAGE_KEY);
+                }
             } else {
                 // Create a new cart for the user
                 const newCart = { userId: user.id, items: [], totalAmount: 0 };
                 const createResponse = await cartAPI.addToCart(newCart);
                 setCartId(createResponse.data.id);
-                setItems([]);
+                await syncLocalCartToBackend(createResponse.data.id);
             }
         } catch (error) {
             console.error('Error fetching cart:', error);
@@ -56,7 +116,13 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     };
 
     const syncCart = async (newItems: CartItem[]) => {
-        if (!user || !cartId) return;
+        if (!user) {
+            // Save to local storage for unauthenticated users
+            await saveLocalCart(newItems);
+            return;
+        }
+
+        if (!cartId) return;
 
         const totalAmount = newItems.reduce((sum, item) => {
             return sum + (item.product?.price || 0) * item.quantity;

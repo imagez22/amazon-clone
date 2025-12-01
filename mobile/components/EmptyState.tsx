@@ -30,12 +30,12 @@ export const EmptyState = ({
                 <Box className="bg-gray-100 p-6 rounded-full">
                     <Icon as={icon} className="w-10 h-10 text-gray-400" />
                 </Box>
-                <Text className="text-xl font-bold text-center">{title}</Text>
+                <Text className="text-xl font-bold text-center" numberOfLines={1}>{title}</Text>
                 <Text className="text-gray-500 text-center">{message}</Text>
 
                 {actionLabel && onAction && (
                     <Button onPress={onAction} className="mt-4">
-                        <ButtonText>{actionLabel}</ButtonText>
+                        <ButtonText className='text-black'>{actionLabel}</ButtonText>
                     </Button>
                 )}
 

@@ -7,6 +7,7 @@ import { Button, ButtonText } from '@/components/ui/button';
 import { Heading } from '@/components/ui/heading';
 import { HStack } from '@/components/ui/hstack';
 import { Divider } from '@/components/ui/divider';
+import { Image } from '@/components/ui/image';
 import { Input, InputField } from '@/components/ui/input';
 import { FormControl, FormControlLabel, FormControlLabelText } from '@/components/ui/form-control';
 import { Radio, RadioGroup, RadioIndicator, RadioIcon, RadioLabel } from '@/components/ui/radio';
@@ -179,6 +180,32 @@ export default function CheckoutScreen() {
 
                     <Box className="bg-white p-4 rounded-md">
                         <Heading className="text-md mb-2">Order Summary</Heading>
+
+                        {/* Cart Items List */}
+                        <VStack className="gap-2 mb-3">
+                            {items.map((item) => (
+                                <HStack key={item.productId} className="gap-3 pb-2 border-b border-gray-200">
+                                    <Image
+                                        source={{ uri: item.product?.images[0] }}
+                                        alt={item.product?.name}
+                                        className="w-16 h-16 rounded-md"
+                                        resizeMode="cover"
+                                    />
+                                    <VStack className="flex-1 gap-1">
+                                        <Text className="text-sm font-medium" numberOfLines={2}>
+                                            {item.product?.name}
+                                        </Text>
+                                        <HStack className="justify-between items-center">
+                                            <Text className="text-xs text-gray-600">Qty: {item.quantity}</Text>
+                                            <Text className="text-sm font-semibold">
+                                                ${((item.product?.price || 0) * item.quantity).toFixed(2)}
+                                            </Text>
+                                        </HStack>
+                                    </VStack>
+                                </HStack>
+                            ))}
+                        </VStack>
+
                         <VStack className="gap-1">
                             <HStack className="justify-between">
                                 <Text>Items:</Text>
