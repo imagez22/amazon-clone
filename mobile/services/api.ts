@@ -1,7 +1,6 @@
 import { db } from '../firebaseConfig';
 import { collection, getDocs, getDoc, doc, query, where, addDoc, updateDoc, setDoc, orderBy, limit } from 'firebase/firestore';
 import { Product, Category, Cart, Order, Wishlist, Banner, ProductFilter, Review } from '../types';
-import { startAt, endAt } from 'firebase/firestore';
 
 // Helper to simulate Axios response structure
 const response = <T>(data: T) => ({ data });
@@ -93,52 +92,14 @@ export const productAPI = {
             }
         }
 
-        // 3. Text Search (Prefix Match)
-        // Note: This must be the last part of the query if we use startAt/endAt with orderBy,
-        // but Firestore has strict rules. 
-        // Simple prefix match on 'name' works best if we order by 'name'.
-        // If we have other sorts, this gets complicated.
-        // For now, if query is present, we might have to do client-side filtering 
-        // OR rely on a specific index. 
-        // Let's try a simple approach: if query is present, we don't do complex sorts on server
-        // OR we just filter by other fields and let client do text search if the dataset is small.
-        // BUT the requirement is "all on the firebase".
-        // A common pattern for "starts with" is:
-        // orderBy('name'), startAt(query), endAt(query + '\uf8ff')
-
-        if (filter.query) {
-            // This requires 'name' to be the first orderBy if we use startAt/endAt
-            // which conflicts with price sort.
-            // We will apply other filters, fetch, and then filter by name in memory 
-            // IF we can't combine them. 
-            // HOWEVER, to strictly follow "all on firebase" for the text part:
-            // We can only do it efficiently if it's the primary sort.
-
-            // Let's try to add it as a where clause if possible? No, Firestore doesn't have 'LIKE'.
-            // We will use the startAt/endAt pattern on 'name'.
-            // This effectively forces sorting by name.
-            if (!filter.sortOrder && !filter.minPrice && !filter.maxPrice && !filter.minRating) {
-                constraints.push(orderBy('name'));
-                constraints.push(startAt(filter.query));
-                constraints.push(endAt(filter.query + '\uf8ff'));
-            } else {
-                // Fallback: If we have other filters/sorts, we can't easily do text search 
-                // on Firestore without a dedicated search engine (Algolia/Typesense).
-                // We will fetch based on other filters and return. 
-                // The client might still need to filter by name if we can't do it here.
-                // BUT, I will implement the prefix match here as best as possible.
-                // If we have a sortOrder, we can't do the name prefix match easily.
-                console.warn('Text search combined with other filters/sorts is limited in Firestore.');
-            }
-        }
-
         q = query(q, ...constraints);
         const querySnapshot = await getDocs(q);
         let products = querySnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() as any } as Product));
 
-        // Client-side fallback for text search if we couldn't do it in Firestore
-        // (e.g. because of other sorts)
-        if (filter.query && (filter.sortOrder || filter.minPrice || filter.maxPrice || filter.minRating)) {
+        // Client-side text search filtering
+        // Note: Firestore doesn't support full-text search natively.
+        // For production apps, consider using Algolia, Typesense, or Elasticsearch.
+        if (filter.query) {
             const lowerQuery = filter.query.toLowerCase();
             products = products.filter(p => p.name.toLowerCase().includes(lowerQuery));
         }

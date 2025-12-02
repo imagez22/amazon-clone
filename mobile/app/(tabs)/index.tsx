@@ -52,7 +52,7 @@ export default function HomeScreen() {
         );
     }
 
-    const deals = products.filter(p => p.isDeal);
+    const deals = products.filter(p => p.isDeal).sort((a, b) => b.price - a.price);
     const bestsellers = products.filter(p => p.isBestseller);
 
     return (
