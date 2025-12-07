@@ -56,9 +56,8 @@ A modern web-based administration dashboard to manage the platform.
     - **Language**: TypeScript
 
 ## How to Deploy
-
-First, Fork and Clone the Repository:
- 1. Go to [GitHub Repo](https://github.com/basir/amazon-clone-final) and click fork button.
+Create GitHub account and fork this repository.
+ 1. Go to [https://github.com/basir/amazon-clone-final](https://github.com/basir/amazon-clone-final) and click fork button.
  2. Open your code editor (e.g. [Antigravity](https://antigravity.google/download)) and clone your forked repo.
 
 Then deploy following components.
@@ -102,24 +101,106 @@ Then deploy following components.
 
 ### Mobile App
 
-In this section, we will generate mobile app for web, android and ios. first duplicate `mobile/.env.example` to `mobile/.env.local` and fill the environment variables.
+In this section, we will generate mobile app for web, android and ios. first duplicate `mobile/.env.example` to `mobile/.env.local` and create 3 apps on firebase console at https://console.firebase.google.com:
+
+1. Web App: download the config file and fill `mobile/.env.local`
+2. Android App: download the config file and fill `mobile/.env.local`
+3. iOS App: download the config file and fill `mobile/.env.local`
+
+Then set the `EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY` in `mobile/.env.local` with your stripe publishable key.
 
 #### 3.1. Web App
 
-1. Go to the [Vercel](https://vercel.com) and create account
-2. Link your GitHub account
-3. Click add project and select the forked repo
-3. Enter this settings:
-    - root directory: mobile
-    - build command: npm run build
-    - start command: npm run start
-4. Enter Environment Variables based on `/mobile/.env.local`
-5. Click deploy
-6. Wait for the deployment to finish
-7. Open the deployed admin panel
+1. Install dependencies
+    ```bash
+    cd mobile
+    npm install
+    ```
+2. Run web app locally
+    ```bash
+    npm run web
+    ```
+3. Export web app
+    ```bash
+        npx expo export --platform web
+    ```
+4. Create expo account at [expo.dev](https://expo.dev)
+5. Install Expo CLI
+    ```bash
+    npm install -g expo-cli
+    ```
+6. Open terminal and login to expo
+    ```bash
+        eas login      
+        # enter your email and password
+        # Logged in
+    ```
+7. Deploy web app
+    ```bash
+        eas deploy 
+    ```
+8. open https://your-app-name.expo.app
+
+
 #### 3.2. Android App
 
+For this section you need an Android device. Enable Developer Options and USB debugging on the device:
+1. Connect Android Device via USB.
+    ```
+    Go to Settings → About phone → Tap “Build number” 7 times to enable Developer Options.
+
+    Go to Settings → Developer Options → Enable USB debugging.
+
+    Connect the device via USB.
+
+    Make sure adb devices lists your device.
+    ```
+2. Run the app
+    ```bash
+    npm run android
+    ```
+3. Generate `.aab` file
+    - Configure eas
+    ```bash
+        eas build:configure
+        # enter yes to automatically create an EAS project for @your_username/amazon-clone-app
+        # enter yes to link local project to EAS project
+        # enter all to configure for ios and android
+    ```
+    - Build android app
+    ```bash 
+        eas build -p android --profile production
+    ```
+4. Submit `.aab` to Google Play:
+   1. Create a Google Play Developer account.
+    - Pay $25 one-time fee.
+    - Go to Play Console
+   2. Create a new app
+    - Click “Create App” → fill app name, language, type, content rating.
+   3. Prepare store listing
+    - Add description, screenshots, icons, feature graphic.
+    - Fill privacy policy and contact info.
+   4. Upload your .aab
+    - Go to Release → Production → Create new release.
+    - Upload the .aab file.
+    - Fill release notes.
+   5. Set content & pricing
+    - Content rating questionnaire.
+    - Pricing and distribution.
+   6. Review & submit
+    - Check for warnings/errors.
+    - Click “Review and publish”.
+    - Google will review your app (can take hours to a few days). After approval, it will be live.
+
 #### 3.3. iOS App
+For this section, you need to have a Mac computer and an iPhone.
+1. Install Expo Go on your iPhone. Download from [App Store](https://apps.apple.com/us/app/expo-go/id982107779).
+2. Connect Mac + iPhone to the same Wi-Fi.
+3. In your project:
+    ```bash
+    npx expo start --ios
+    ```
+4. Scan the QR code with your iPhone → it opens in Expo Go.
 
 ### Admin Panel
 
