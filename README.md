@@ -129,7 +129,7 @@ In this section, we will generate mobile app for web, android and ios.
     EXPO_PUBLIC_FIREBASE_APP_ID_IOS=
     ```
 
-3. GEt stripe publishable key from stripe dashbaord and update `mobile/.env.local`
+3. Get stripe publishable key from stripe dashboard and update `mobile/.env.local`
     ```
     EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY=
     ```
