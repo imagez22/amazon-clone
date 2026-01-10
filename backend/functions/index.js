@@ -2,37 +2,27 @@ const { onInit, setGlobalOptions } = require("firebase-functions");
 const { onRequest, onCall, HttpsError } = require("firebase-functions/https");
 const { defineString } = require('firebase-functions/params');
 const logger = require("firebase-functions/logger");
-const STRIPE_SECRET_KEY = defineString('STRIPE_SECRET_KEY');
-const Stripe = require('stripe');
-
-let stripe;
+const PAYSTACK_SECRET_KEY = defineString('PAYSTACK_SECRET_KEY');
+const Paystack = require('paystack-api')(PAYSTACK_SECRET_KEY.value());
 
 setGlobalOptions({ maxInstances: 10 });
 
-onInit(() => {
-    stripe = new Stripe(STRIPE_SECRET_KEY.value());
-});
-
 
 exports.createPaymentIntent = onCall(async (request) => {
-    const { amount, currency = "usd" } = request.data;
+    const { amount, currency = "GHS" } = request.data;
     if (!amount || amount <= 0) {
         throw new HttpsError("invalid-argument", "The function must be called with a positive amount.");
     }
     try {
-        const paymentIntent = await stripe.paymentIntents.create({
-            amount: Math.round(amount * 100),
+        const response = await Paystack.transaction.initialize({
+            amount: Math.round(amount * 100), // Paystack expects amount in pesewas for GHS
             currency,
-            automatic_payment_methods: {
-                enabled: true,
-            },
+            email: request.auth?.token.email || 'customer@example.com', // Need email
+            callback_url: 'https://yourapp.com/callback', // Optional
         });
-
-        return {
-            clientSecret: paymentIntent.client_secret,
-        };
+        return { authorizationUrl: response.data.authorization_url, reference: response.data.reference };
     } catch (error) {
-        logger.error("Error creating payment intent:", error);
-        throw new HttpsError("internal", error.message);
+        logger.error("Error creating payment:", error);
+        throw new HttpsError("internal", "Failed to create payment.");
     }
 });

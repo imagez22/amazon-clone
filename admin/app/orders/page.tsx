@@ -96,7 +96,7 @@ export default function OrdersPage() {
                                         {order.items?.length || 0} items
                                     </td>
                                     <td className="p-4 align-middle text-zinc-900 dark:text-white">
-                                        ${order.totalAmount}
+                                        ₵{order.totalAmount}
                                     </td>
                                     <td className="p-4 align-middle">
                                         <span

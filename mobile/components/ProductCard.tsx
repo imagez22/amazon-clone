@@ -68,10 +68,10 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                     </HStack>
 
                     <HStack className="items-center gap-1">
-                        <Text className="font-bold text-lg">${product.price}</Text>
+                        <Text className="font-bold text-lg">₵{product.price}</Text>
                         {product.originalPrice && (
                             <Text className="text-xs line-through text-gray-400">
-                                ${product.originalPrice}
+                                ₵{product.originalPrice}
                             </Text>
                         )}
                     </HStack>

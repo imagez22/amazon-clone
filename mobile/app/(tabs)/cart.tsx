@@ -40,7 +40,7 @@ export default function CartScreen() {
                     <Box className="bg-white p-4 rounded-md">
                         <HStack className="justify-between items-center mb-2">
                             <Text className="text-lg">Subtotal ({itemCount} items):</Text>
-                            <Text className="text-xl font-bold">${totalAmount.toFixed(2)}</Text>
+                            <Text className="text-xl font-bold">₵{totalAmount.toFixed(2)}</Text>
                         </HStack>
                         {isAuthenticated ? (
                             <Button

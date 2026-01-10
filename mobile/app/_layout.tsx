@@ -5,14 +5,14 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { AuthProvider, CartProvider, WishlistProvider } from "../context";
 import * as Linking from 'expo-linking';
 
-import { StripeProvider } from "@/utils/stripe";
+import { PaystackProvider } from "@/utils/paystack";
 
 export default function RootLayout() {
     const urlScheme = Linking.createURL('/');
     return (
         <SafeAreaProvider>
-            <StripeProvider
-                publishableKey={process.env.EXPO_PUBLIC_STRIPE_PUBLISHABLE_KEY!}
+            <PaystackProvider
+                publishableKey={process.env.EXPO_PUBLIC_PAYSTACK_PUBLIC_KEY!}
                 urlScheme={urlScheme}
             >
                 <GluestackUIProvider mode="light">
@@ -35,7 +35,7 @@ export default function RootLayout() {
                         </CartProvider>
                     </AuthProvider>
                 </GluestackUIProvider>
-            </StripeProvider>
+            </PaystackProvider>
         </SafeAreaProvider>
     );
 }

@@ -230,7 +230,7 @@ export default function ProductsPage() {
                                             {product.category}
                                         </td>
                                         <td className="p-4 align-middle text-zinc-900 dark:text-white">
-                                            ${product.price}
+                                            ₵{product.price}
                                         </td>
                                         <td className="p-4 align-middle text-zinc-500 dark:text-zinc-400">
                                             {product.countInStock}

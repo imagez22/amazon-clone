@@ -119,7 +119,7 @@ export default function OrderDetailsPage() {
                                         </div>
                                     </div>
                                     <p className="font-medium text-zinc-900 dark:text-white">
-                                        ${item.price}
+                                        ₵{item.price}
                                     </p>
                                 </div>
                             ))}
@@ -128,7 +128,7 @@ export default function OrderDetailsPage() {
                             <div className="text-right">
                                 <p className="text-sm text-zinc-500 dark:text-zinc-400">Total Amount</p>
                                 <p className="text-2xl font-bold text-zinc-900 dark:text-white">
-                                    ${order.totalAmount}
+                                    ₵{order.totalAmount}
                                 </p>
                             </div>
                         </div>

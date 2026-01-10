@@ -156,13 +156,13 @@ export default function ProductDetailScreen() {
 
                     <VStack className="gap-1">
                         <HStack className="items-baseline gap-1">
-                            <Text className="text-sm relative -top-2">$</Text>
+                            <Text className="text-sm relative -top-2">₵</Text>
                             <Text className="text-4xl font-bold">{Math.floor(product.price)}</Text>
                             <Text className="text-sm relative -top-2">{(product.price % 1).toFixed(2).substring(2)}</Text>
                         </HStack>
                         {product.originalPrice && (
                             <Text className="line-through text-gray-500">
-                                List Price: ${product.originalPrice}
+                                List Price: ₵{product.originalPrice}
                             </Text>
                         )}
                     </VStack>

@@ -34,7 +34,7 @@ export const CartItem = ({ item }: CartItemProps) => {
                 <VStack className="flex-1 justify-between">
                     <VStack>
                         <Text numberOfLines={2} className="text-sm font-medium">{product.name}</Text>
-                        <Text className="font-bold text-md mt-1">${product.price}</Text>
+                        <Text className="font-bold text-md mt-1">₵{product.price}</Text>
                         {product.inStock ? (
                             <Text className="text-xs text-green-600">In Stock</Text>
                         ) : (

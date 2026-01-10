@@ -149,8 +149,8 @@
     {
       "id": "1",
       "name": "JBL Tune 520BT - Wireless On-Ear Headphones, Up to 57H Battery Life and Speed Charge, Lightweight, Comfortable and Foldable Design, Hands-Free Calls with Voice Aware",
-      "price": 39.98,
-      "originalPrice": 69.98,
+      "price": 650,
+      "originalPrice": 950,
       "categoryId": "1",
       "subCategoryId": "1-3",
       "category": "Electronics",
@@ -171,8 +171,8 @@
     {
       "id": "2",
       "name": "Sony WH-CH720N Noise Cancelling Wireless Headphones Bluetooth Over The Ear Headset with Microphone and Alexa Voice Control, Black",
-      "price": 123,
-      "originalPrice": 249.99,
+      "price": 1850,
+      "originalPrice": 2800,
       "categoryId": "1",
       "subCategoryId": "1-3",
       "category": "Electronics",
@@ -192,8 +192,8 @@
     {
       "id": "3",
       "name": "New Bose QuietComfort Ultra Bluetooth Headphones (2nd Gen), Wireless Headphones with Spatial Audio, Over Ear Noise Cancelling with Mic, Up to 30 Hours of Play time, Midnight Violet - Limited Edition",
-      "price": 499,
-      "originalPrice": 599,
+      "price": 7500,
+      "originalPrice": 8500,
       "categoryId": "1",
       "subCategoryId": "1-3",
       "category": "Electronics",
@@ -213,8 +213,8 @@
     {
       "id": "4",
       "name": "soundcore by Anker Q20i Hybrid Active Noise Cancelling Headphones, Wireless Over-Ear Bluetooth, 40H Long ANC Playtime, Hi-Res Audio, Big Bass, Customize via an App, Transparency Mode, Ideal for Travel",
-      "price": 45.1,
-      "originalPrice": 99.99,
+      "price": 700,
+      "originalPrice": 1200,
       "categoryId": "1",
       "subCategoryId": "1-3",
       "category": "Electronics",
@@ -234,8 +234,8 @@
     {
       "id": "5",
       "name": "Sony WH-1000XM6 The Best Wireless Noise Canceling Headphones, HD NC Processor QN3, 12 Microphones, Adaptive NC Optimizer, Mastered by Engineers, Studio-Quality, 30-Hour Battery",
-      "price": 498,
-      "originalPrice": 599.99,
+      "price": 7500,
+      "originalPrice": 8500,
       "categoryId": "1",
       "subCategoryId": "1-3",
       "category": "Electronics",
@@ -255,8 +255,8 @@
     {
       "id": "6",
       "name": "Apple iPhone 17",
-      "price": 829.99,
-      "originalPrice": 949.99,
+      "price": 12000,
+      "originalPrice": 13500,
       "categoryId": "1",
       "subCategoryId": "1-1",
       "category": "Electronics",
@@ -277,8 +277,8 @@
     {
       "id": "7",
       "name": "Apple iPhone 17 Pro Max",
-      "price": 1199.99,
-      "originalPrice": 1399.99,
+      "price": 17000,
+      "originalPrice": 19000,
       "categoryId": "1",
       "subCategoryId": "1-1",
       "category": "Electronics",
@@ -299,8 +299,8 @@
     {
       "id": "8",
       "name": "Samsung Galaxy S25 Ultra",
-      "price": 1299,
-      "originalPrice": 1499,
+      "price": 18000,
+      "originalPrice": 20000,
       "categoryId": "1",
       "subCategoryId": "1-1",
       "category": "Electronics",
@@ -321,8 +321,8 @@
     {
       "id": "9",
       "name": "Samsung Galaxy Z Flip7",
-      "price": 1099.99,
-      "originalPrice": 1299.99,
+      "price": 15000,
+      "originalPrice": 17000,
       "categoryId": "1",
       "subCategoryId": "1-1",
       "category": "Electronics",
@@ -343,8 +343,8 @@
     {
       "id": "10",
       "name": "Google Pixel 10 Pro XL",
-      "price": 1249.99,
-      "originalPrice": 1449.99,
+      "price": 16000,
+      "originalPrice": 18000,
       "categoryId": "1",
       "subCategoryId": "1-1",
       "category": "Electronics",
@@ -365,8 +365,8 @@
     {
       "id": "11",
       "name": "SAXX Underwear Co. Men's Ultra Super Soft Boxer Brief Fly, 3 Pack",
-      "price": 46.87,
-      "originalPrice": 66.95,
+      "price": 703,
+      "originalPrice": 1004,
       "categoryId": "2",
       "subCategoryId": "2-1",
       "category": "Fashions",
@@ -386,8 +386,8 @@
     {
       "id": "12",
       "name": "Mizuno Mens AustinSock",
-      "price": 13.59,
-      "originalPrice": 15.99,
+      "price": 203,
+      "originalPrice": 240,
       "categoryId": "2",
       "subCategoryId": "2-1",
       "category": "Fashions",
@@ -407,8 +407,8 @@
     {
       "id": "13",
       "name": "Amazon Essentials Men's Standard Slim-fit Cotton Pique Tipped Polo",
-      "price": 15.77,
-      "originalPrice": 18.5,
+      "price": 236,
+      "originalPrice": 277,
       "categoryId": "2",
       "subCategoryId": "2-1",
       "category": "Fashions",
@@ -428,8 +428,8 @@
     {
       "id": "14",
       "name": "Tommy Hilfiger mens Tanner Polo Cf",
-      "price": 57.87,
-      "originalPrice": 77.16,
+      "price": 868,
+      "originalPrice": 1157,
       "categoryId": "2",
       "subCategoryId": "2-1",
       "category": "Fashions",
@@ -449,8 +449,8 @@
     {
       "id": "15",
       "name": "GAP Mens Essential Slim Fit Khaki Chino Pants",
-      "price": 65.55,
-      "originalPrice": 85.65,
+      "price": 983,
+      "originalPrice": 1285,
       "categoryId": "2",
       "subCategoryId": "2-1",
       "category": "Fashions",
@@ -470,8 +470,8 @@
     {
       "id": "16",
       "name": "BTFBM Sweaters for Women Fall Cable Knit Sweater Oversized Crew Neck Long Sleeve Chunky Casual Pullover Tops Winter 2025",
-      "price": 37.99,
-      "originalPrice": 57.99,
+      "price": 570,
+      "originalPrice": 870,
       "categoryId": "2",
       "subCategoryId": "2-2",
       "category": "Fashions",
@@ -491,8 +491,8 @@
     {
       "id": "17",
       "name": "Jhsnjnr Womens Oversized Cozy Chunky Sweaters Fall Long Sleeve Knitted Pullover Tops Crew Neck Cute Fuzzy Sweater",
-      "price": 44.99,
-      "originalPrice": 64.99,
+      "price": 675,
+      "originalPrice": 975,
       "categoryId": "2",
       "subCategoryId": "2-2",
       "category": "Fashions",
@@ -512,8 +512,8 @@
     {
       "id": "18",
       "name": "Carhartt Womens Relaxed Fit Midweight Logo Sleeve Graphic Printed SweatshirtSweatshirt",
-      "price": 69.99,
-      "originalPrice": 83.53,
+      "price": 1050,
+      "originalPrice": 1253,
       "categoryId": "2",
       "subCategoryId": "2-2",
       "category": "Fashions",
@@ -533,8 +533,8 @@
     {
       "id": "19",
       "name": "Ekouaer Flannel Faux Poncho for Women Lightweigh Blanket Warm TV Shawl Winter Coat Sweater Cape",
-      "price": 32.19,
-      "originalPrice": 45.99,
+      "price": 483,
+      "originalPrice": 690,
       "categoryId": "2",
       "subCategoryId": "2-2",
       "category": "Fashions",
@@ -554,8 +554,8 @@
     {
       "id": "20",
       "name": "Amazon Essentials Womens Crop Hoodie Sweatshirt",
-      "price": 32.1,
-      "originalPrice": 55.59,
+      "price": 481,
+      "originalPrice": 834,
       "categoryId": "2",
       "subCategoryId": "2-2",
       "category": "Fashions",
@@ -571,6 +571,69 @@
       "brand": "Amazon Essentials",
       "isDeal": false,
       "isBestseller": false
+    },
+    {
+      "id": "19",
+      "name": "Dell Inspiron 15 3000 Laptop",
+      "price": 2500,
+      "originalPrice": 3000,
+      "categoryId": "1",
+      "subCategoryId": "1-2",
+      "category": "Electronics",
+      "subCategory": "Laptops",
+      "images": [
+        "https://i.ibb.co/DfYQ7Z0/dell-laptop.webp"
+      ],
+      "description": "Dell Inspiron 15 3000 laptop with Intel Core i3, 8GB RAM, 256GB SSD, 15.6-inch display. Perfect for everyday computing, work, and entertainment.",
+      "inStock": true,
+      "stockQuantity": 25,
+      "rating": 4.2,
+      "ratingCount": 3,
+      "brand": "Dell",
+      "isDeal": true,
+      "isBestseller": false
+    },
+    {
+      "id": "20",
+      "name": "HP Pavilion 14 Laptop",
+      "price": 4500,
+      "originalPrice": 5200,
+      "categoryId": "1",
+      "subCategoryId": "1-2",
+      "category": "Electronics",
+      "subCategory": "Laptops",
+      "images": [
+        "https://i.ibb.co/8gW7nJc/hp-laptop.webp"
+      ],
+      "description": "HP Pavilion 14 laptop with AMD Ryzen 5, 16GB RAM, 512GB SSD, 14-inch FHD display. Ideal for productivity and multimedia tasks.",
+      "inStock": true,
+      "stockQuantity": 20,
+      "rating": 4.5,
+      "ratingCount": 3,
+      "brand": "HP",
+      "isDeal": false,
+      "isBestseller": true
+    },
+    {
+      "id": "21",
+      "name": "Apple MacBook Air M3",
+      "price": 12000,
+      "originalPrice": 13500,
+      "categoryId": "1",
+      "subCategoryId": "1-2",
+      "category": "Electronics",
+      "subCategory": "Laptops",
+      "images": [
+        "https://i.ibb.co/L8fJ9pQ/macbook-air.webp"
+      ],
+      "description": "Apple MacBook Air with M3 chip, 8GB RAM, 256GB SSD, 13.6-inch Liquid Retina display. Ultra-thin, lightweight, and powerful for creative professionals.",
+      "inStock": true,
+      "stockQuantity": 15,
+      "rating": 4.8,
+      "ratingCount": 3,
+      "brand": "Apple",
+      "isDeal": true,
+      "isBestseller": true
     }
   ],
   "carts": [
@@ -589,12 +652,12 @@
         {
           "productId": "1",
           "quantity": 2,
-          "price": 39.98,
+          "price": 650,
           "productName": "JBL Tune 520BT",
           "productImage": "https://i.ibb.co/DP0x9Wp8/p1-1-1.webp"
         }
       ],
-      "totalAmount": 79.96,
+      "totalAmount": 1300,
       "shippingAddress": {
         "street": "123 Main St",
         "city": "Seattle",
@@ -621,12 +684,12 @@
         {
           "productId": "6",
           "quantity": 1,
-          "price": 829.99,
+          "price": 12000,
           "productName": "Apple iPhone 17",
           "productImage": "https://i.ibb.co/DPR4Xcq9/p2-1-1.webp"
         }
       ],
-      "totalAmount": 829.99,
+      "totalAmount": 12000,
       "shippingAddress": {
         "street": "456 Oak Ave",
         "city": "Portland",
@@ -685,12 +748,12 @@
         {
           "productId": "11",
           "quantity": 3,
-          "price": 46.87,
+          "price": 703,
           "productName": "SAXX Underwear",
           "productImage": "https://i.ibb.co/Z69rM1qF/p3-1.jpg"
         }
       ],
-      "totalAmount": 140.61,
+      "totalAmount": 2109,
       "shippingAddress": {
         "street": "456 Oak Ave",
         "city": "Portland",
@@ -781,12 +844,12 @@
         {
           "productId": "16",
           "quantity": 2,
-          "price": 37.99,
+          "price": 570,
           "productName": "BTFBM Sweater",
           "productImage": "https://i.ibb.co/ZRrZGkC0/p2-4.webp"
         }
       ],
-      "totalAmount": 75.98,
+      "totalAmount": 1140,
       "shippingAddress": {
         "street": "123 Main St",
         "city": "Seattle",

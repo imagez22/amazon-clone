@@ -63,7 +63,7 @@ export default function OrderDetailScreen() {
                             <Divider className="my-2" />
                             <HStack className="justify-between">
                                 <Text>Order Total</Text>
-                                <Text className="font-bold">${order.totalAmount.toFixed(2)}</Text>
+                                <Text className="font-bold">₵{order.totalAmount.toFixed(2)}</Text>
                             </HStack>
                             <HStack className="justify-between">
                                 <Text>Status</Text>

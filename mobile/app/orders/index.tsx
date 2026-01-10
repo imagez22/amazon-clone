@@ -91,7 +91,7 @@ export default function OrdersScreen() {
                                     </VStack>
                                     <VStack className="items-end">
                                         <Text className="text-xs text-gray-500">TOTAL</Text>
-                                        <Text className="text-sm font-bold">${order.totalAmount.toFixed(2)}</Text>
+                                        <Text className="text-sm font-bold">₵{order.totalAmount.toFixed(2)}</Text>
                                     </VStack>
                                 </HStack>
 
